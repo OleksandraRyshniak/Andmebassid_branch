@@ -83,7 +83,9 @@ update Person
 set Age = 149
 where Id = 8
 
---?
+--vanuse lisamise piirangu lisamine
+alter table Person
+add constraint CK_Person_Age check (Age > 0 and Age < 150)
 alter table Person
 add constraint CK_Person_Age check (Age > 0 and Age < 150)
 
@@ -228,32 +230,32 @@ add DepartmentId
 int null
 
 
---?
+--Uute veergude MiddleName ja LastName loomine
 alter table Employees
 add MiddleName nvarchar(30)
 
 alter table Employees
 add LastName nvarchar(30)
 
-update Employees set FirstName = 'Tom', MiddleName = 'Nick', LastName = 'Jones'
+update Employees set Name = 'Tom', MiddleName = 'Nick', LastName = 'Jones'
 where Id = 1
-update Employees set FirstName = 'Pam', MiddleName = NULL, LastName = 'Anderson'
+update Employees set Name = 'Pam', MiddleName = NULL, LastName = 'Anderson'
 where Id = 2
-update Employees set FirstName = 'John', MiddleName = NULL, LastName = NULL
+update Employees set Name = 'John', MiddleName = NULL, LastName = NULL
 where Id = 3
-update Employees set FirstName = 'Sam', MiddleName = NULL, LastName = 'Smith'
+update Employees set Name = 'Sam', MiddleName = NULL, LastName = 'Smith'
 where Id = 4
-update Employees set FirstName = NULL, MiddleName = 'Todd', LastName = 'Someone'
+update Employees set Name = NULL, MiddleName = 'Todd', LastName = 'Someone'
 where Id = 5
-update Employees set FirstName = 'Ben', MiddleName = 'Ten', LastName = 'Sven'
+update Employees set Name = 'Ben', MiddleName = 'Ten', LastName = 'Sven'
 where Id = 6
-update Employees set FirstName = 'Sara', MiddleName = NULL, LastName = 'Connor'
+update Employees set Name = 'Sara', MiddleName = NULL, LastName = 'Connor'
 where Id = 7
-update Employees set FirstName = 'Valarie', MiddleName = 'Balerine', LastName = NULL
+update Employees set Name = 'Valarie', MiddleName = 'Balerine', LastName = NULL
 where Id = 8
-update Employees set FirstName = 'James', MiddleName = '007', LastName = 'Bond'
+update Employees set Name = 'James', MiddleName = '007', LastName = 'Bond'
 where Id = 9
-update Employees set FirstName = NULL, MiddleName = NULL, LastName = 'Crowe'
+update Employees set Name = NULL, MiddleName = NULL, LastName = 'Crowe'
 where Id = 10
 
 
