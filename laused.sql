@@ -56,18 +56,17 @@ values (7, 'Spiderman', 'spider@spiderman.com', 2)
 -- vaatame tabeli andmeid
 select * from Person
 
---- ?
+--- Eemalda piirang tabelist Person
 alter table Person
 drop constraint tblPerson_GenderId_FK
 
--- ?
+-- andmete lisamine tabelisse Gender
 insert into Gender (Id, Gender)
 values (3, 'Unknown')
 -- lisame võõrvõtme uuesti
 alter table Person
 add constraint DF_Person_GenderId
 default 3 for GenderId
-
 
 select * from Person
 select * from Gender
