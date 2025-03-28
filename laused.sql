@@ -63,7 +63,7 @@ drop constraint tblPerson_GenderId_FK
 -- andmete lisamine tabelisse Gender
 insert into Gender (Id, Gender)
 values (3, 'Unknown')
--- ?
+-- tabeli Person võõrvõti kustutamine
 alter table Person
 add constraint DF_Person_GenderId
 default 3 for GenderId
@@ -74,7 +74,7 @@ select * from Gender
 insert into Person (Id, Name, Email)
 values (8, 'Test', 'Test')
 
----?
+---andmebaasi tabelisse Person uue veeru Age lisamine
 alter table Person
 add Age nvarchar(10)
 
