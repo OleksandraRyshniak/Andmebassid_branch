@@ -103,7 +103,10 @@ select * from Person
 alter table Person
 add City nvarchar(25)
 
--- ?
+-- Kuvab, kus tabelis asub linn 'Gotham'
+update Person
+set City = 'Gotham'
+where id=1
 select * from Person where City = 'Gotham'
 
 
